@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://bbp78avdblje8"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/projectile_template.gd" id="1_esqkj"]
+[ext_resource type="Texture2D" uid="uid://cm2sy3wbckwt8" path="res://Assets/Weapons/Bullets/Fx_02.png" id="4_1ubaf"]
+[ext_resource type="Texture2D" uid="uid://bkvsjc871awk6" path="res://Assets/Weapons/Bullets/Impacts/Explosion.png" id="5_4rhsw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7cbl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xv75"]
+region = Rect2(102, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggtjr"]
+atlas = ExtResource("4_1ubaf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvh5b"]
+atlas = ExtResource("4_1ubaf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd51j"]
+atlas = ExtResource("5_4rhsw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3km4e"]
+atlas = ExtResource("5_4rhsw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg8cb"]
+atlas = ExtResource("5_4rhsw")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jit3"]
+atlas = ExtResource("5_4rhsw")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83lai"]
+atlas = ExtResource("5_4rhsw")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms7vg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xv75")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggtjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvh5b")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd51j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3km4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg8cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jit3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83lai")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 10.0
+}]
+
+[node name="projectile_template" type="Area2D"]
+scale = Vector2(3.63, 3.63)
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_esqkj")
+time_limit = 30.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.825, 0.315)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.81, 0.345)
+shape = SubResource("CircleShape2D_l7cbl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.22, 1.22)
+sprite_frames = SubResource("SpriteFrames_ms7vg")
+animation = &"flying"
+offset = Vector2(0.535, -0.44)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciegq1jq47oev"]
+
+[ext_resource type="Script" path="res://Scripts/weapon_template.gd" id="1_iwpkj"]
+[ext_resource type="Texture2D" uid="uid://utw87mwqelwl" path="res://Assets/Animated Weapons/blaster.png" id="2_6ro81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdbh6"]
+atlas = ExtResource("2_6ro81")
+region = Rect2(0, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jr6y"]
+atlas = ExtResource("2_6ro81")
+region = Rect2(34, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt44r"]
+atlas = ExtResource("2_6ro81")
+region = Rect2(68, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k0c2"]
+atlas = ExtResource("2_6ro81")
+region = Rect2(0, 0, 34, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m3qx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdbh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jr6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt44r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdbh6")
+}],
+"loop": false,
+"name": &"firing",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k0c2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="weapon_template" type="Node2D"]
+script = ExtResource("1_iwpkj")
+number_of_projectiles = 10
+projectile_speed = 500.0
+spread = 1.5
+fire_rate = 0.3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -1)
+rotation = 0.785398
+sprite_frames = SubResource("SpriteFrames_0m3qx")
+animation = &"firing"
+frame = 3
+frame_progress = 1.0
+
+[node name="FirePoint" type="Marker2D" parent="."]
+position = Vector2(3, 22)
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_timer_timeout"]

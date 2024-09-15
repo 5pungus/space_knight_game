@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnv37hy0vykgw"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_ranged.gd" id="1_sb42k"]
+[ext_resource type="Texture2D" uid="uid://c2pmdiaaetc7l" path="res://Assets/enemy.png" id="2_o5cet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjmdy"]
+size = Vector2(8, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oy3p0"]
+
+[node name="enemy_ranged" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_sb42k")
+health = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xjmdy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_o5cet")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+scale = Vector2(45.675, 45.675)
+shape = SubResource("CircleShape2D_oy3p0")

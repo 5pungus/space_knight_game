@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0hg1bmn48w4c"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/weapon_template.gd" id="1_ynpqo"]
+[ext_resource type="PackedScene" uid="uid://dubqdhgljlkyr" path="res://Scenes/Weapons/Projectiles/bullet.tscn" id="2_ffmnh"]
+[ext_resource type="Texture2D" uid="uid://cwpj3hvlfyeu6" path="res://Assets/Weapons/blaster.png" id="3_i3wcj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdbh6"]
+atlas = ExtResource("3_i3wcj")
+region = Rect2(0, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jr6y"]
+atlas = ExtResource("3_i3wcj")
+region = Rect2(34, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt44r"]
+atlas = ExtResource("3_i3wcj")
+region = Rect2(68, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k0c2"]
+atlas = ExtResource("3_i3wcj")
+region = Rect2(0, 0, 34, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m3qx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdbh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jr6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt44r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdbh6")
+}],
+"loop": false,
+"name": &"firing",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k0c2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="weapon_template" type="Node2D"]
+script = ExtResource("1_ynpqo")
+damage = 25.0
+spread = 0.2
+projectile_scene = ExtResource("2_ffmnh")
+fire_rate = 0.3
+metadata/weapon_name = "Rifle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -1)
+rotation = 0.785398
+sprite_frames = SubResource("SpriteFrames_0m3qx")
+animation = &"firing"
+frame = 3
+frame_progress = 1.0
+
+[node name="FirePoint" type="Marker2D" parent="."]
+position = Vector2(3, 22)
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[node name="name" type="Node" parent="."]
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_timer_timeout"]

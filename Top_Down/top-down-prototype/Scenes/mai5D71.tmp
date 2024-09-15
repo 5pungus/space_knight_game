@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck1gospifaryk"]
+
+[ext_resource type="PackedScene" uid="uid://g3m351docttg" path="res://Scenes/Maps/default_map.tscn" id="1_6qjp1"]
+[ext_resource type="PackedScene" uid="uid://c5c5mdopm3ejd" path="res://Scenes/Templates/Player/player.tscn" id="2_r7tku"]
+[ext_resource type="PackedScene" uid="uid://d0hg1bmn48w4c" path="res://Scenes/Weapons/rifle.tscn" id="3_px65x"]
+
+[node name="Main" type="Node"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_6qjp1")]
+
+[node name="Player" parent="." instance=ExtResource("2_r7tku")]
+health = 100
+player_speed = 500
+
+[node name="WeaponMount" type="Node2D" parent="Player"]
+
+[node name="weapon_template" parent="Player/WeaponMount" instance=ExtResource("3_px65x")]

@@ -1,0 +1,159 @@
+[gd_scene load_steps=11 format=3 uid="uid://dnc0e2eyit1u6"]
+
+[ext_resource type="Script" path="res://Scripts/UI/HUD.gd" id="1_bubqa"]
+[ext_resource type="Texture2D" uid="uid://b48xmpafq6qs" path="res://Scenes/UI/UI-Assets/ui.png" id="2_afqel"]
+[ext_resource type="Texture2D" uid="uid://ddl2b88qbbkqa" path="res://Scenes/UI/Thumbnails/Character/knight_thumbnail.png" id="3_1ihqk"]
+[ext_resource type="Texture2D" uid="uid://b5yytixtyt83" path="res://Scenes/UI/Thumbnails/Weapon/rifle.png" id="4_t18p1"]
+[ext_resource type="Texture2D" uid="uid://wplimvo7ndxm" path="res://Scenes/UI/Thumbnails/Weapon/shotgun.png" id="5_rpkok"]
+[ext_resource type="Texture2D" uid="uid://du5ptgwjwnegk" path="res://Scenes/UI/Thumbnails/Weapon/launcher.png" id="6_5mfhf"]
+[ext_resource type="Texture2D" uid="uid://dwsqcdtkbullc" path="res://Scenes/UI/UI-Assets/highlight_1.png" id="7_6a383"]
+[ext_resource type="Texture2D" uid="uid://deucytrs0wc3y" path="res://Scenes/UI/UI-Assets/highlight.png" id="8_cjvij"]
+[ext_resource type="Texture2D" uid="uid://du2rtoarudx75" path="res://Scenes/UI/UI-Assets/highlight_2.png" id="9_owwax"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5stuh"]
+bg_color = Color(0.538324, 0, 0.156258, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 270.0
+script = ExtResource("1_bubqa")
+
+[node name="HealthBar" type="ProgressBar" parent="HUD"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = -11.0
+offset_right = 140.0
+offset_bottom = -3.0
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_5stuh")
+show_percentage = false
+
+[node name="hud_base" type="TextureRect" parent="HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_afqel")
+
+[node name="Weapon_Thumbnails" type="Node" parent="HUD"]
+
+[node name="rifle" type="TextureRect" parent="HUD/Weapon_Thumbnails"]
+offset_left = 346.0
+offset_top = 241.0
+offset_right = 378.0
+offset_bottom = 273.0
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("4_t18p1")
+
+[node name="shotgun" type="TextureRect" parent="HUD/Weapon_Thumbnails"]
+offset_left = 380.0
+offset_top = 241.0
+offset_right = 412.0
+offset_bottom = 273.0
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("5_rpkok")
+
+[node name="launcher" type="TextureRect" parent="HUD/Weapon_Thumbnails"]
+offset_left = 414.0
+offset_top = 241.0
+offset_right = 454.0
+offset_bottom = 281.0
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("6_5mfhf")
+
+[node name="Character_Thumbnails" type="Node" parent="HUD"]
+
+[node name="knight" type="TextureRect" parent="HUD/Character_Thumbnails"]
+offset_left = 4.0
+offset_top = 238.0
+offset_right = 44.0
+offset_bottom = 278.0
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("3_1ihqk")
+
+[node name="ability_highlight" type="Node" parent="HUD"]
+
+[node name="super_ability" type="TextureRect" parent="HUD/ability_highlight"]
+offset_left = 224.0
+offset_top = 244.0
+offset_right = 264.0
+offset_bottom = 284.0
+scale = Vector2(0.625, 0.6)
+texture = ExtResource("7_6a383")
+
+[node name="ability1" type="TextureRect" parent="HUD/ability_highlight"]
+visible = false
+offset_left = 176.0
+offset_top = 246.0
+offset_right = 216.0
+offset_bottom = 286.0
+scale = Vector2(0.523, 0.523)
+texture = ExtResource("7_6a383")
+
+[node name="ability2" type="TextureRect" parent="HUD/ability_highlight"]
+visible = false
+offset_left = 201.0
+offset_top = 246.0
+offset_right = 241.0
+offset_bottom = 286.0
+scale = Vector2(0.523, 0.523)
+texture = ExtResource("7_6a383")
+
+[node name="ability3" type="TextureRect" parent="HUD/ability_highlight"]
+visible = false
+offset_left = 251.0
+offset_top = 246.0
+offset_right = 291.0
+offset_bottom = 286.0
+scale = Vector2(0.523, 0.523)
+texture = ExtResource("7_6a383")
+
+[node name="ability4" type="TextureRect" parent="HUD/ability_highlight"]
+visible = false
+offset_left = 276.0
+offset_top = 246.0
+offset_right = 316.0
+offset_bottom = 286.0
+scale = Vector2(0.523, 0.523)
+texture = ExtResource("7_6a383")
+
+[node name="weapon_highlight" type="Node" parent="HUD"]
+
+[node name="super_weapon" type="TextureRect" parent="HUD/weapon_highlight"]
+offset_left = 446.0
+offset_top = 237.0
+offset_right = 486.0
+offset_bottom = 277.0
+scale = Vector2(0.776, 0.776)
+texture = ExtResource("8_cjvij")
+
+[node name="weapon1" type="TextureRect" parent="HUD/weapon_highlight"]
+offset_left = 345.0
+offset_top = 240.0
+offset_right = 385.0
+offset_bottom = 280.0
+scale = Vector2(0.676, 0.676)
+texture = ExtResource("9_owwax")
+
+[node name="weapon2" type="TextureRect" parent="HUD/weapon_highlight"]
+offset_left = 379.0
+offset_top = 240.0
+offset_right = 419.0
+offset_bottom = 280.0
+scale = Vector2(0.676, 0.676)
+texture = ExtResource("9_owwax")
+
+[node name="weapon3" type="TextureRect" parent="HUD/weapon_highlight"]
+offset_left = 413.0
+offset_top = 240.0
+offset_right = 453.0
+offset_bottom = 280.0
+scale = Vector2(0.676, 0.676)
+texture = ExtResource("9_owwax")

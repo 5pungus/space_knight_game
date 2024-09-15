@@ -1,0 +1,114 @@
+[gd_scene load_steps=17 format=3 uid="uid://dqpp0cx8lwasj"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/weapon_template.gd" id="1_3qgor"]
+[ext_resource type="PackedScene" uid="uid://bfq1yheje5tds" path="res://Scenes/Enemies/Enemy Weapons/Fireball/fireball.tscn" id="2_4vn4e"]
+[ext_resource type="Texture2D" uid="uid://bg833gww375tf" path="res://Assets/Weapons/tome.png" id="2_wfvhp"]
+[ext_resource type="Texture2D" uid="uid://mok3rs2e0uxw" path="res://Assets/Weapons/PixelCrawler/Hands/Hands.png" id="3_x1nk7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prn1v"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(0, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7ri4"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(34, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbj03"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(68, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6h2t"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(102, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfhaw"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(136, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u7al"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(170, 0, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7dob"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(170, 33, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46s2s"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(136, 33, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy0cs"]
+atlas = ExtResource("2_wfvhp")
+region = Rect2(102, 33, 34, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsbv8"]
+atlas = ExtResource("3_x1nk7")
+region = Rect2(0, 48, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co7vj"]
+atlas = ExtResource("3_x1nk7")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_561qo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prn1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7ri4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbj03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6h2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfhaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u7al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7dob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46s2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy0cs")
+}],
+"loop": false,
+"name": &"firing",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsbv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co7vj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="weapon_template" type="Node2D"]
+script = ExtResource("1_3qgor")
+number_of_projectiles = 2
+projectile_speed = 250.0
+spread = 1.0
+projectile_scene = ExtResource("2_4vn4e")
+fire_rate = 3.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_561qo")
+animation = &"idle"
+
+[node name="FirePoint" type="Marker2D" parent="."]
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_timer_timeout"]

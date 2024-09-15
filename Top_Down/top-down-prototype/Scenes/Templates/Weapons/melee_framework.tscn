@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0eeyl1q1kwgg"]
+
+[ext_resource type="Script" path="res://Scripts/melee_framework.gd" id="1_8opnr"]
+
+[node name="melee_framework" type="Node2D"]
+script = ExtResource("1_8opnr")
