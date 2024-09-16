@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b45vmavntspj4"]
-
-[ext_resource type="PackedScene" uid="uid://i53jhm7e0nba" path="res://Scenes/Templates/hitscan_weapon_template.tscn" id="1_b8ijp"]
-
-[node name="WeaponMount" type="Node2D"]
-
-[node name="weapon_template" parent="." instance=ExtResource("1_b8ijp")]

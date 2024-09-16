@@ -111,4 +111,6 @@ animation = &"idle"
 
 [node name="FireRateTimer" type="Timer" parent="."]
 
+[node name="BurstTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_timer_timeout"]

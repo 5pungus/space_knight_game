@@ -1,6 +1,6 @@
 
 ## Script:
-[[Scripts/Player/player.gd]]
+[[Development Documentation/Scripts/Player/player.gd]]
 ## Overview:
 This script manages the behavior of a 2D player character, including movement, health, abilities, and weapon mechanics. The character can move around, aim at the mouse cursor, switch weapons, use abilities, and regenerate health over time. It also integrates with a heads-up display (HUD) to visually represent the player's health and equipped weapon.
 

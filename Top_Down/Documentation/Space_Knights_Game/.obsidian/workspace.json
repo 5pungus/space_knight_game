@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Enemy Controllers.md",
+                "file": "Development Documentation/Scripts/Weapons/Modular Projectile System.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "23fd6c2f11deb48f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Development Documentation/Scripts/Enemy/Enemy Health Bar.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4b5240eb8eb23427",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Story/Master Story Doc.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Enemy Controllers.md",
+                "file": "Story/Master Story Doc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Enemy Controllers.md",
+                "file": "Story/Master Story Doc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Enemy Controllers.md"
+                "file": "Story/Master Story Doc.md"
               }
             }
           }
@@ -146,23 +171,33 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e601bfc54e21dc2d",
+  "active": "4b5240eb8eb23427",
   "lastOpenFiles": [
-    "Player Controller.md",
-    "Scripts/Enemy/enemy_ranged.gd.md",
-    "Enemy Controllers.md",
-    "Scripts/Enemy/enemy.gd.md",
-    "Scripts/Player/player.gd.md",
-    "Master Document.md",
-    "Scripts/Weapons",
-    "Scripts/UI",
-    "Scripts/Systems",
-    "Scripts/Player",
-    "Scripts/Enemy",
-    "Scripts",
+    "Development Documentation/Scripts/Enemy/Enemy Health Bar.md",
+    "Story/Master Story Doc.md",
+    "Design Brainstorming",
+    "Story",
+    "Development Documentation",
+    "Development Documentation/Scripts/Enemy/EnemyHealthBar.gd.md",
+    "Development Documentation/Master Document.md",
+    "Development Documentation/Scripts/Weapons/Modular Weapon System.md",
+    "Development Documentation/Scripts/UI/HUD.md",
+    "Development Documentation/Scripts/Player/Player Controller.md",
+    "Development Documentation/Scripts/UI/hud.gd.md",
+    "Development Documentation/Scripts/Weapons/Modular Projectile System.md",
+    "Development Documentation/Scripts/Weapons/projectile_template.gd.md",
+    "Development Documentation/Scripts/Weapons/weapon_template.gd.md",
+    "Development Documentation/Scripts/Enemy/Enemy Controllers.md",
+    "Development Documentation/Scripts/Enemy/enemy_ranged.gd.md",
+    "Development Documentation/Scripts/Enemy/enemy.gd.md",
+    "Development Documentation/Scripts/Player/player.gd.md",
+    "Development Documentation/Scripts/Weapons",
+    "Development Documentation/Scripts/UI",
+    "Development Documentation/Scripts/Systems",
+    "Development Documentation/Scripts/Player",
+    "Development Documentation/Scripts/Enemy",
+    "Development Documentation/Scripts",
     "player.gd",
-    "InventoryManager.gd",
-    "Inventory.gd",
     "Welcome.md"
   ]
 }

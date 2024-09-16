@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://g3m351docttg" path="res://Scenes/Maps/default_map.tscn" id="1_6qjp1"]
 [ext_resource type="PackedScene" uid="uid://c5c5mdopm3ejd" path="res://Scenes/Templates/Player/player.tscn" id="2_r7tku"]
 [ext_resource type="PackedScene" uid="uid://6kdqi2e80lof" path="res://Scenes/Abilities/dash.tscn" id="3_nsjkp"]
-[ext_resource type="PackedScene" uid="uid://d0hg1bmn48w4c" path="res://Scenes/Weapons/rifle.tscn" id="3_px65x"]
+[ext_resource type="PackedScene" uid="uid://chwpx06yjafmb" path="res://Scenes/Weapons/burst_rifle.tscn" id="4_p2cf7"]
 [ext_resource type="PackedScene" uid="uid://gujr2b5p5ukt" path="res://Scenes/Enemies/Skeleton/skeleton_titan.tscn" id="7_mr12k"]
 [ext_resource type="PackedScene" uid="uid://bighovp3fv0i6" path="res://Scenes/Enemies/Skeleton/skeleton_wizard.tscn" id="8_bijg8"]
 [ext_resource type="PackedScene" uid="uid://xgt7jvyho83d" path="res://Scenes/Enemies/Skeleton/skeleton.tscn" id="9_7yptg"]
@@ -15,37 +15,41 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_r7tku")]
 ability_1_scene = ExtResource("3_nsjkp")
+weapon_1_scene = ExtResource("4_p2cf7")
 
 [node name="WeaponMount" type="Node2D" parent="Player"]
 
-[node name="weapon_template" parent="Player/WeaponMount" instance=ExtResource("3_px65x")]
+[node name="weapon_template" parent="Player/WeaponMount" instance=ExtResource("4_p2cf7")]
 
 [node name="enemy" parent="." instance=ExtResource("9_7yptg")]
-position = Vector2(126, 409)
+position = Vector2(-1079, -182)
 
 [node name="enemy2" parent="." instance=ExtResource("9_7yptg")]
-position = Vector2(835, 124)
-
-[node name="enemy3" parent="." instance=ExtResource("9_7yptg")]
-position = Vector2(512, 19)
+position = Vector2(-1115, 151)
 
 [node name="enemy_ranged" parent="." instance=ExtResource("8_bijg8")]
-position = Vector2(-249, -375)
+position = Vector2(-843, 151)
 
 [node name="enemy_ranged2" parent="." instance=ExtResource("8_bijg8")]
-position = Vector2(995, -293)
+position = Vector2(-879, -167)
+
+[node name="enemy3" parent="." instance=ExtResource("9_7yptg")]
+position = Vector2(-198, 756)
+
+[node name="enemy4" parent="." instance=ExtResource("9_7yptg")]
+position = Vector2(-138, 969)
+
+[node name="enemy5" parent="." instance=ExtResource("9_7yptg")]
+position = Vector2(194, 750)
 
 [node name="enemy_ranged3" parent="." instance=ExtResource("8_bijg8")]
-position = Vector2(26, 737)
+position = Vector2(65, 930)
 
-[node name="enemy_ranged4" parent="." instance=ExtResource("8_bijg8")]
-position = Vector2(-514, -43)
+[node name="enemy6" parent="." instance=ExtResource("9_7yptg")]
+position = Vector2(922, -41)
 
-[node name="enemy4" parent="." instance=ExtResource("7_mr12k")]
-position = Vector2(-1104, -226)
+[node name="enemy7" parent="." instance=ExtResource("9_7yptg")]
+position = Vector2(991, 232)
 
-[node name="enemy5" parent="." instance=ExtResource("7_mr12k")]
-position = Vector2(-1067, 224)
-
-[node name="enemy6" parent="." instance=ExtResource("7_mr12k")]
-position = Vector2(107, -933)
+[node name="enemy8" parent="." instance=ExtResource("7_mr12k")]
+position = Vector2(1030, 52)

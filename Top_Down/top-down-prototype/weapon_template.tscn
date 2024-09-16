@@ -1,23 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0hg1bmn48w4c"]
+[gd_scene load_steps=8 format=3 uid="uid://c581r2qknjenx"]
 
-[ext_resource type="Script" path="res://Scripts/Weapons/weapon_template.gd" id="1_ynpqo"]
-[ext_resource type="PackedScene" uid="uid://dubqdhgljlkyr" path="res://Scenes/Weapons/Projectiles/bullet.tscn" id="2_ffmnh"]
-[ext_resource type="Texture2D" uid="uid://cwpj3hvlfyeu6" path="res://Assets/Weapons/blaster.png" id="3_i3wcj"]
+[ext_resource type="Script" path="res://Scripts/Weapons/weapon_template.gd" id="1_fn1qv"]
+[ext_resource type="Texture2D" uid="uid://cwpj3hvlfyeu6" path="res://Assets/Weapons/blaster.png" id="2_pg55i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qdbh6"]
-atlas = ExtResource("3_i3wcj")
+atlas = ExtResource("2_pg55i")
 region = Rect2(0, 0, 34, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jr6y"]
-atlas = ExtResource("3_i3wcj")
+atlas = ExtResource("2_pg55i")
 region = Rect2(34, 0, 34, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vt44r"]
-atlas = ExtResource("3_i3wcj")
+atlas = ExtResource("2_pg55i")
 region = Rect2(68, 0, 34, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8k0c2"]
-atlas = ExtResource("3_i3wcj")
+atlas = ExtResource("2_pg55i")
 region = Rect2(0, 0, 34, 33)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0m3qx"]
@@ -49,12 +48,11 @@ animations = [{
 }]
 
 [node name="weapon_template" type="Node2D"]
-script = ExtResource("1_ynpqo")
-damage = 25.0
-spread = 0.2
-projectile_scene = ExtResource("2_ffmnh")
+script = ExtResource("1_fn1qv")
+number_of_projectiles = 10
+projectile_speed = 500.0
+spread = 1.5
 fire_rate = 0.3
-metadata/weapon_name = "Rifle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7, -1)
@@ -68,8 +66,6 @@ frame_progress = 1.0
 position = Vector2(3, 22)
 
 [node name="FireRateTimer" type="Timer" parent="."]
-
-[node name="name" type="Node" parent="."]
 
 [node name="BurstTimer" type="Timer" parent="."]
 
