@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck1gospifaryk"]
+[gd_scene load_steps=7 format=3 uid="uid://ck1gospifaryk"]
 
 [ext_resource type="PackedScene" uid="uid://g3m351docttg" path="res://Scenes/Maps/default_map.tscn" id="1_6qjp1"]
 [ext_resource type="PackedScene" uid="uid://c5c5mdopm3ejd" path="res://Scenes/Templates/Player/player.tscn" id="2_r7tku"]
 [ext_resource type="PackedScene" uid="uid://6kdqi2e80lof" path="res://Scenes/Abilities/dash.tscn" id="3_nsjkp"]
-[ext_resource type="PackedScene" uid="uid://chwpx06yjafmb" path="res://Scenes/Weapons/burst_rifle.tscn" id="4_p2cf7"]
 [ext_resource type="PackedScene" uid="uid://gujr2b5p5ukt" path="res://Scenes/Enemies/Skeleton/skeleton_titan.tscn" id="7_mr12k"]
 [ext_resource type="PackedScene" uid="uid://bighovp3fv0i6" path="res://Scenes/Enemies/Skeleton/skeleton_wizard.tscn" id="8_bijg8"]
 [ext_resource type="PackedScene" uid="uid://xgt7jvyho83d" path="res://Scenes/Enemies/Skeleton/skeleton.tscn" id="9_7yptg"]
@@ -15,11 +14,8 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_r7tku")]
 ability_1_scene = ExtResource("3_nsjkp")
-weapon_1_scene = ExtResource("4_p2cf7")
 
 [node name="WeaponMount" type="Node2D" parent="Player"]
-
-[node name="weapon_template" parent="Player/WeaponMount" instance=ExtResource("4_p2cf7")]
 
 [node name="enemy" parent="." instance=ExtResource("9_7yptg")]
 position = Vector2(-1079, -182)

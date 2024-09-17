@@ -30,21 +30,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "4b5240eb8eb23427",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Story/Master Story Doc.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Story/Master Story Doc.md",
+                "file": "Development Documentation/Scripts/Enemy/Enemy Health Bar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Story/Master Story Doc.md",
+                "file": "Development Documentation/Scripts/Enemy/Enemy Health Bar.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Story/Master Story Doc.md"
+                "file": "Development Documentation/Scripts/Enemy/Enemy Health Bar.md"
               }
             }
           }
@@ -171,10 +159,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4b5240eb8eb23427",
+  "active": "23fd6c2f11deb48f",
   "lastOpenFiles": [
-    "Development Documentation/Scripts/Enemy/Enemy Health Bar.md",
     "Story/Master Story Doc.md",
+    "Development Documentation/Scripts/Player/player.gd",
+    "Development Documentation/Scripts/InventoryManager.gd",
+    "Development Documentation/Scripts/Inventory.gd",
+    "Development Documentation/Scripts/player.gd",
+    "Development Documentation/player.gd",
+    "Development Documentation/InventoryManager.gd",
+    "Development Documentation/Inventory.gd",
+    "Development Documentation/Scripts/Enemy/Enemy Health Bar.md",
     "Design Brainstorming",
     "Story",
     "Development Documentation",
@@ -191,13 +186,6 @@
     "Development Documentation/Scripts/Enemy/enemy_ranged.gd.md",
     "Development Documentation/Scripts/Enemy/enemy.gd.md",
     "Development Documentation/Scripts/Player/player.gd.md",
-    "Development Documentation/Scripts/Weapons",
-    "Development Documentation/Scripts/UI",
-    "Development Documentation/Scripts/Systems",
-    "Development Documentation/Scripts/Player",
-    "Development Documentation/Scripts/Enemy",
-    "Development Documentation/Scripts",
-    "player.gd",
     "Welcome.md"
   ]
 }

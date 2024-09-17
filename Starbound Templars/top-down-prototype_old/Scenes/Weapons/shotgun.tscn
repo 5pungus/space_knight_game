@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cagqdvpd0s50t"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/weapon_template.gd" id="1_3cu5t"]
-[ext_resource type="PackedScene" uid="uid://dufu7q8o1sfgf" path="res://Scenes/Weapons/Projectiles/pellet.tscn" id="2_rcef8"]
+[ext_resource type="PackedScene" uid="uid://dnpgnwwe5gh1t" path="res://Scenes/Weapons/Projectiles/pellet.tscn" id="2_rcef8"]
 [ext_resource type="Texture2D" uid="uid://cgxfn481x4ulx" path="res://Assets/Weapons/shotgun.png" id="3_lywql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpadi"]
