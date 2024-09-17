@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk2r8inkfkq6r"]
+
+[ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_xmv1m"]
+[ext_resource type="Script" path="res://Scripts/user_input.gd" id="2_04e5s"]
+[ext_resource type="Script" path="res://Scripts/movement.gd" id="3_qc3ly"]
+[ext_resource type="PackedScene" uid="uid://blq6rain43hvy" path="res://Components/Camera/dynamic_camera.tscn" id="4_aru60"]
+[ext_resource type="Texture2D" uid="uid://cq6qxo3lvwovv" path="res://icon.svg" id="5_w16l7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiaq8"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_xmv1m")
+
+[node name="UserInput" type="Node" parent="."]
+script = ExtResource("2_04e5s")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("3_qc3ly")
+
+[node name="DynamicCamera" parent="." instance=ExtResource("4_aru60")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_xiaq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("5_w16l7")

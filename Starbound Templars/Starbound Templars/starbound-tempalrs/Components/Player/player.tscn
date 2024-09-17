@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bssut"]
 [ext_resource type="Texture2D" uid="uid://cq6qxo3lvwovv" path="res://icon.svg" id="2_psxaf"]
-[ext_resource type="Script" path="res://Scripts/dynamic_camera.gd" id="3_0d5cw"]
+[ext_resource type="PackedScene" uid="uid://blq6rain43hvy" path="res://Components/Camera/dynamic_camera.tscn" id="3_nusos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lov1o"]
 
@@ -20,8 +20,4 @@ debug_color = Color(6.73831e-07, 0.568975, 0.850949, 0.42)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_psxaf")
 
-[node name="DynamicCamera" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-script = ExtResource("3_0d5cw")
-between_point = 3
-max_distance = 20
+[node name="DynamicCamera" parent="." instance=ExtResource("3_nusos")]

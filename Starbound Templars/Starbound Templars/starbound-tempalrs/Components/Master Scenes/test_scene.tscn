@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://jxskq42wqscw"]
 
-[ext_resource type="PackedScene" uid="uid://dbnq4h5iajkaf" path="res://Components/Player/player.tscn" id="1_rdexk"]
 [ext_resource type="PackedScene" uid="uid://mpbdn2i0h7qm" path="res://Components/Maps/test_stage.tscn" id="2_j5y01"]
+[ext_resource type="PackedScene" uid="uid://dk2r8inkfkq6r" path="res://Components/Player/composition_test_player.tscn" id="2_x3jqp"]
 
 [node name="Test_Scene" type="Node"]
 
 [node name="Test Stage" parent="." instance=ExtResource("2_j5y01")]
 
-[node name="Player" parent="." instance=ExtResource("1_rdexk")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_x3jqp")]

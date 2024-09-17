@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://blq6rain43hvy"]
+
+[ext_resource type="Script" path="res://Scripts/dynamic_camera.gd" id="1_5xnil"]
+
+[node name="DynamicCamera" type="Camera2D"]
+position_smoothing_enabled = true
+script = ExtResource("1_5xnil")
+between_point = 3
+max_distance = 20
